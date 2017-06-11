@@ -1,0 +1,5 @@
+---
+
+GitlabSecurity/PublicSend:
+  Description: Check for use of send()/public_send()
+  Enabled: true
