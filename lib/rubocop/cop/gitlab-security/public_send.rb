@@ -1,7 +1,7 @@
 module RuboCop
   module Cop
-    module GitlabChecks
-      class NoPublicSendMethod < RuboCop::Cop::Cop
+    module GitlabSecurity
+      class PublicSend < RuboCop::Cop::Cop
         MSG = 'Avoid using `send`'
 
         def on_send(node)
