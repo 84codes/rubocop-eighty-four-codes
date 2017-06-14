@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
-#require 'rubocop/gitlab-security/version'
+require 'rubocop/gitlab-security/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'rubocop-gitlab-security'
@@ -17,8 +17,7 @@ Gem::Specification.new do |spec|
   ]
   spec.licenses = ['MIT']
 
-#  spec.version = RuboCop::GitLab-Security::Version::STRING
-  spec.version = "0.0.0"
+  spec.version = RuboCop::GitlabSecurity::Version::STRING
   spec.platform = Gem::Platform::RUBY
   spec.required_ruby_version = '>= 2.1.0'
 
@@ -31,5 +30,7 @@ Gem::Specification.new do |spec|
   ]
   spec.extra_rdoc_files = ['MIT-LICENSE.md', 'README.md']
 
-  spec.add_runtime_dependency 'rubocop', '>= 0.49.0'
+  spec.add_runtime_dependency 'rubocop', '>= 0.47.1'
+
+  spec.add_development_dependency 'rake'
 end

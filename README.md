@@ -79,7 +79,7 @@ cop. For example:
 ```yaml
 GitlabSecurity/PublicSend:
   Exclude:
-    - app/my_file.rb
+    - 'spec/**/*'
 ```
 
 ## Contributing
