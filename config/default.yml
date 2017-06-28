@@ -8,3 +8,9 @@ AllCops:
 GitlabSecurity/PublicSend:
   Description: Check for use of send()/public_send()
   Enabled: true
+GitlabSecurity/RedirectToParamsUpdate:
+  Description: Check for use of redirect_to(params.update())
+  Enabled: true
+GitlabSecurity/SendFileParams:
+  Description: Check for passing of params hash to send_file()
+  Enabled: true
