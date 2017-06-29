@@ -1,22 +1,24 @@
 module RuboCop
   module Cop
     module GitlabSecurity
-      # Check for use of redirect_to(params.update())
+      # Check for use of send_file(..., params[], ...)
       #
-      # Passing user params to the redirect_to method provides an open redirect
+      # Passing user params to the send_file() method allows directory traversal
       # 
       # @example
       #
       #   # bad
-      #   redirect_to(params.update(action:'main'))
+      #   send_file("/tmp/myproj/" + params[:filename])
       # 
-      #   # good
-      #   redirect_to(whitelist(params))
+      #   # good (verify directory)
+      
+      #   basename = File.expand_path("/tmp/myproj")
+      #   filename = File.expand_path(File.join(basename, @file.public_filename))
+      #   raise if basename != filename
+      #   send_file filename, disposition: 'inline'
       #
       class SendFileParams < RuboCop::Cop::Cop
-        MSG = 'Do not pass user provided params to send_file()'
-
-#          (send nil :send_file (send (send nil :params) ... ))
+        MSG = 'Do not pass user provided params directly to send_file(), verify the path with file.expand_path() first.'
 
         def_node_search :params_node?, <<-PATTERN
            (send (send nil :params) ... )
@@ -25,7 +27,6 @@ module RuboCop
         def on_send(node)
           return unless node.command?(:send_file)
           return unless node.method_args.any? { |e| params_node?(e) }
-#          node.method_args.any? { |a| puts "#{a}" }
 
           add_offense(node, :selector)
         end
