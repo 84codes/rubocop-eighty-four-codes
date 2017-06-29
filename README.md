@@ -2,7 +2,7 @@ This is an early attempt at creating Rubocop rules, similar to Rubocop-RSpec, fo
 blocking dangerous code. This code is based heavily upon the [Rubocop-RSpec](https://github.com/backus/rubocop-rspec)
 code released under the MIT License.
 
-Installation is the same as with Rubocop-RSpec.
+## Installation
 
 Just install the `rubocop-gitlab-security` gem
 
@@ -54,17 +54,17 @@ By default, `rubocop-gitlab-security` inspects all files. You can override this 
 ```yaml
 # Inspect all files
 AllCops:
-  RSpec:
+  GitlabSecurity:
     Patterns:
     - '.+'
 ```
 
 ```yaml
-# Inspect only files ending with `_test.rb`
+# Inspect only controller files.
 AllCops:
-  RSpec:
+  GitlabSecurity:
     Patterns:
-    - '_test.rb$'
+    - app/controllers/**/*.rb
 ```
 
 ## The Cops
