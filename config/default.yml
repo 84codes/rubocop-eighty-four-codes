@@ -14,3 +14,12 @@ GitlabSecurity/RedirectToParamsUpdate:
 GitlabSecurity/SendFileParams:
   Description: Check for passing of params hash to send_file()
   Enabled: true
+GitlabSecurity/SqlInjection:
+  Description: Check for SQL Injection in where()
+  Enabled: true
+GitlabSecurity/SystemCommandInjection:
+  Description: Check for Command Injection in System()
+  Enabled: true
+GitlabSecurity/DeepMunge:
+  Description: Disallow removal of Deep Munge setting
+  Enabled: true
