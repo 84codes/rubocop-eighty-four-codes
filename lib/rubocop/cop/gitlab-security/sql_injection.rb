@@ -29,8 +29,6 @@ module RuboCop
           return unless where_user_input?(node)
           return unless node.method_args.any? { |e| string_var_string?(e) }
 
-          puts "#{node}"
-
           add_offense(node, :selector)
         end
       end
