@@ -19,6 +19,9 @@ require 'rubocop/cop/gitlab-security/cop'
 
 RuboCop::GitlabSecurity::Inject.defaults!
 
+require 'rubocop/cop/gitlab-security/deep_munge'
 require 'rubocop/cop/gitlab-security/public_send'
 require 'rubocop/cop/gitlab-security/redirect_to_params_update'
 require 'rubocop/cop/gitlab-security/send_file_params'
+require 'rubocop/cop/gitlab-security/sql_injection'
+require 'rubocop/cop/gitlab-security/system_command_injection'
