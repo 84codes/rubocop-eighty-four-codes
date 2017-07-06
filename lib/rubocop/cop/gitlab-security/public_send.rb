@@ -22,11 +22,13 @@ module RuboCop
       #   end
       #
       class PublicSend < RuboCop::Cop::Cop
-        MSG = 'Avoid using `send`'
+        MSG = "Avoid using `%s`"
 
         def on_send(node)
           return unless node.command?(:send) || node.command?(:public_send)
-          add_offense(node, :selector)
+
+          append_error = node.command?(:send) ? "send()" : "public_send()"
+          add_offense(node, :selector, format(MSG, append_error))
         end
       end
     end
