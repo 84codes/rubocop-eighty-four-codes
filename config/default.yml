@@ -5,6 +5,9 @@ AllCops:
     Patterns:
     - '.+'
 
+GitlabSecurity/DeepMunge:
+  Description: Disallow removal of Deep Munge setting
+  Enabled: true
 GitlabSecurity/PublicSend:
   Description: Check for use of send()/public_send()
   Enabled: true
@@ -19,7 +22,4 @@ GitlabSecurity/SqlInjection:
   Enabled: true
 GitlabSecurity/SystemCommandInjection:
   Description: Check for Command Injection in System()
-  Enabled: true
-GitlabSecurity/DeepMunge:
-  Description: Disallow removal of Deep Munge setting
   Enabled: true
