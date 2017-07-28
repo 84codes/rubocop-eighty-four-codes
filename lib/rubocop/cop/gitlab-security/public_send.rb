@@ -5,12 +5,12 @@ module RuboCop
       #
       # If passed untrusted input these methods can be used to execute arbitrary methods on behalf
       # of an attacker.
-      # 
+      #
       # @example
       #
       #   # bad
       #   myobj.public_send("#{params[:foo]}")
-      # 
+      #
       #   # good
       #   case params[:foo].to_s
       #   when 'choice1'
@@ -22,7 +22,8 @@ module RuboCop
       #   end
       #
       class PublicSend < RuboCop::Cop::Cop
-        MSG = "Avoid using `%s`"
+        MSG = "Avoid using `%s`. If this method is not passed user input it can be white-listed
+        by adding `#rubocop:disable GitlabSecurity/PublicSend`"
 
         def on_send(node)
           return unless node.command?(:send) || node.command?(:public_send)

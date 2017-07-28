@@ -4,20 +4,21 @@ module RuboCop
       # Check for use of system("/bin/ls #{params[:file]}")
       #
       # Passing user input to system() without sanitization and parameterization can result in command injection
-      # 
+      #
       # @example
       #
       #   # bad
       #   system("/bin/ls #{filename}")
-      # 
+      #
       #   # good (parameters)
       #   system("/bin/ls", filename)
       #   # even better
       #   exec("/bin/ls", shell_escape(filename))
       #
       class SystemCommandInjection < RuboCop::Cop::Cop
-        MSG = 'Do not include variables in the command name for system(). Use parameters "system(cmd, params)" or exec() instead.'
-   
+        MSG = 'Do not include variables in the command name for system(). Use parameters "system(cmd, params)" or exec() instead.
+        If this warning is in error you can white-list the line with `#rubocop:disable GitLabSecurity/SystemCommandInjection`'
+
         def_node_matcher :system_var?, <<-PATTERN
           (dstr (str ...) (begin ...) ...)
         PATTERN
