@@ -4,7 +4,7 @@ module RuboCop
   module GitlabSecurity
     # Version information for the GitlabSecurity Rubocop  plugin.
     module Version
-      STRING = '0.0.5'.freeze
+      STRING = '0.0.6'.freeze
     end
   end
 end
