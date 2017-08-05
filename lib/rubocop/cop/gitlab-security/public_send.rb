@@ -1,10 +1,10 @@
 module RuboCop
   module Cop
     module GitlabSecurity
-      # Check for use of the dangerous public_send() and send() methods.
+      # Checks for the use of `public_send`, `send`, and `__send__` methods.
       #
-      # If passed untrusted input these methods can be used to execute arbitrary methods on behalf
-      # of an attacker.
+      # If passed untrusted input these methods can be used to execute arbitrary
+      # methods on behalf of an attacker.
       #
       # @example
       #
@@ -20,16 +20,19 @@ module RuboCop
       #   when 'choice3'
       #     items.choice3
       #   end
-      #
       class PublicSend < RuboCop::Cop::Cop
-        MSG = "Avoid using `%s`. If this method is not passed user input it can be white-listed
-        by adding `#rubocop:disable GitlabSecurity/PublicSend`"
+        MSG = "Avoid using `%s`."
+
+        def_node_matcher :send?, <<-PATTERN
+          (send _ ${:send :public_send :__send__} ...)
+        PATTERN
 
         def on_send(node)
-          return unless node.command?(:send) || node.command?(:public_send)
+          send?(node) do |match|
+            next unless node.arguments?
 
-          append_error = node.command?(:send) ? "send()" : "public_send()"
-          add_offense(node, :selector, format(MSG, append_error))
+            add_offense(node, :selector, format(MSG, match))
+          end
         end
       end
     end
