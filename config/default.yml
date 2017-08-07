@@ -10,6 +10,11 @@ GitlabSecurity/DeepMunge:
   Enabled: true
   StyleGuide: http://www.rubydoc.info/gems/rubocop-gitlab-security/RuboCop/Cop/GitlabSecurity/DeepMunge
 
+GitlabSecurity/JsonSerialization:
+  Description: Checks for `to_json` / `as_json` without whitelisting via `only`.
+  Enabled: true
+  StyleGuide: http://www.rubydoc.info/gems/rubocop-gitlab-security/RuboCop/Cop/GitlabSecurity/JsonSerialization
+
 GitlabSecurity/PublicSend:
   Description: Checks for the use of `public_send`, `send`, and `__send__` methods.
   Enabled: true
