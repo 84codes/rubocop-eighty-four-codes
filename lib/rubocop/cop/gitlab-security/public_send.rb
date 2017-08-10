@@ -21,7 +21,7 @@ module RuboCop
       #     items.choice3
       #   end
       class PublicSend < RuboCop::Cop::Cop
-        MSG = "Avoid using `%s`."
+        MSG = 'Avoid using `%s`.'.freeze
 
         def_node_matcher :send?, <<-PATTERN
           (send _ ${:send :public_send :__send__} ...)

@@ -16,7 +16,7 @@ module RuboCop
       #
       class SqlInjection < RuboCop::Cop::Cop
         MSG = 'Parameterize all user-input passed to where(), do not directly embed user input in SQL queries.
-        If this warning is in error you can white-list the line with `#rubocop:disable GitlabSecurity/SqlInjection`'
+        If this warning is in error you can white-list the line with `#rubocop:disable GitlabSecurity/SqlInjection`'.freeze
 
         def_node_matcher :where_user_input?, <<-PATTERN
           (send _ :where ...)

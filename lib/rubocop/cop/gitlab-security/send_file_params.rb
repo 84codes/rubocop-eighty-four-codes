@@ -20,7 +20,7 @@ module RuboCop
       class SendFileParams < RuboCop::Cop::Cop
         MSG = 'Do not pass user provided params directly to send_file(), verify
         the path with file.expand_path() first. If the path has already been verified
-        this warning can be disabled using `#rubocop:disable GitlabSecurity/SendFileParams`'
+        this warning can be disabled using `#rubocop:disable GitlabSecurity/SendFileParams`'.freeze
 
         def_node_search :params_node?, <<-PATTERN
            (send (send nil :params) ... )
