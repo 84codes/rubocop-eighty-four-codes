@@ -1,0 +1,19 @@
+image: 'dev.gitlab.org:5005/gitlab/gitlab-build-images:ruby-2.3-static-analyses'
+
+rspec:
+  stage: test
+  script:
+    - which ruby
+    - ruby -v
+    - gem install bundler --no-ri --no-rdoc
+    - bundle install
+    - bundle exec rspec --format progress
+
+rubocop:
+  stage: test
+  script:
+    - which ruby
+    - ruby -v
+    - gem install bundler --no-ri --no-rdoc
+    - bundle install
+    - bundle exec rubocop

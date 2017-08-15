@@ -17,7 +17,7 @@ module RuboCop
       #
       class SystemCommandInjection < RuboCop::Cop::Cop
         MSG = 'Do not include variables in the command name for system(). Use parameters "system(cmd, params)" or exec() instead.
-        If this warning is in error you can white-list the line with `#rubocop:disable GitLabSecurity/SystemCommandInjection`'
+        If this warning is in error you can white-list the line with `#rubocop:disable GitLabSecurity/SystemCommandInjection`'.freeze
 
         def_node_matcher :system_var?, <<-PATTERN
           (dstr (str ...) (begin ...) ...)

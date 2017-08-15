@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
     Basic security checking for Ruby files.
     A plugin for the RuboCop code style enforcing & linting tool.
   end_description
-  spec.homepage = 'http://gitlab.com/briann/rubocop-gitlab-security'
+  spec.homepage = 'https://gitlab.com/gitlab-org/rubocop-gitlab-security/'
   spec.authors = ['Brian Neel']
   spec.email = [
     'brian@gitlab.com'

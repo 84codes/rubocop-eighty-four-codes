@@ -6,20 +6,27 @@ AllCops:
     - '.+'
 
 GitlabSecurity/DeepMunge:
-  Description: Disallow removal of Deep Munge setting
+  Description: Checks for disabling the deep munge security control.
   Enabled: true
+  StyleGuide: http://www.rubydoc.info/gems/rubocop-gitlab-security/RuboCop/Cop/GitlabSecurity/DeepMunge
+
 GitlabSecurity/PublicSend:
-  Description: Check for use of send()/public_send()
+  Description: Checks for the use of `public_send`, `send`, and `__send__` methods.
   Enabled: true
+  StyleGuide: http://www.rubydoc.info/gems/rubocop-gitlab-security/RuboCop/Cop/GitlabSecurity/PublicSend
+
 GitlabSecurity/RedirectToParamsUpdate:
   Description: Check for use of redirect_to(params.update())
   Enabled: true
+
 GitlabSecurity/SendFileParams:
   Description: Check for passing of params hash to send_file()
   Enabled: true
+
 GitlabSecurity/SqlInjection:
   Description: Check for SQL Injection in where()
   Enabled: true
+
 GitlabSecurity/SystemCommandInjection:
   Description: Check for Command Injection in System()
   Enabled: true
