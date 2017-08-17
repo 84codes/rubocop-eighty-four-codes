@@ -54,7 +54,7 @@ module RuboCop
 
         # Check for `SomeConstant.new`
         def_node_search :constant_init, <<~PATTERN
-          (send (const nil $_) :new _)
+          (send (const nil $_) :new ...)
         PATTERN
 
         def on_send(node)

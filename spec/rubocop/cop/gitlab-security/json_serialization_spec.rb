@@ -24,12 +24,18 @@ RSpec.describe RuboCop::Cop::GitlabSecurity::JsonSerialization do
       end
 
       it 'does nothing when sent to a Serializer instance' do
-        expect_no_offenses(<<-RUBY)
-          MergeRequestSerializer
-            .new(current_user: current_user, project: issuable.project)
-            .represent(issuable)
-            .#{method}
-        RUBY
+        aggregate_failures do
+          expect_no_offenses(<<-RUBY)
+            IssueSerializer.new.represent(issuable).#{method}
+          RUBY
+
+          expect_no_offenses(<<-RUBY)
+            MergeRequestSerializer
+              .new(current_user: current_user, project: issuable.project)
+              .represent(issuable)
+              .#{method}
+          RUBY
+        end
       end
 
       it 'adds an offense when sent to any other receiver' do
