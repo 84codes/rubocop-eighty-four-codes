@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubocop-gitlab-security (0.0.6)
+    rubocop-gitlab-security (0.1.0)
       rubocop (>= 0.47.1)
 
 GEM
@@ -59,4 +59,4 @@ DEPENDENCIES
   rubocop-rspec (~> 1.15.0)
 
 BUNDLED WITH
-   1.15.3
+   1.15.4
