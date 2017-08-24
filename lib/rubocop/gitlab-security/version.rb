@@ -2,9 +2,9 @@
 
 module RuboCop
   module GitlabSecurity
-    # Version information for the GitlabSecurity Rubocop  plugin.
+    # Version information for the GitlabSecurity Rubocop plugin.
     module Version
-      STRING = '0.0.6'
+      STRING = '0.1.0'
     end
   end
 end
