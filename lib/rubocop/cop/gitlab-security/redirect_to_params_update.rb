@@ -17,13 +17,13 @@ module RuboCop
         MSG = 'Avoid using redirect_to(params.update()). Only pass whitelisted arguments into redirect_to() (e.g. not including `host`)'.freeze
 
         def_node_matcher :redirect_to_params_update_node, <<-PATTERN
-           (send nil :redirect_to (send (send nil :params) ${:update :merge} ...))
+           (send nil :redirect_to (send (send nil? :params) ${:update :merge} ...))
         PATTERN
 
         def on_send(node)
           return unless redirect_to_params_update_node(node)
 
-          add_offense(node, :selector)
+          add_offense(node, location: :selector)
         end
       end
     end

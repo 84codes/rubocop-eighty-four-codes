@@ -23,14 +23,14 @@ module RuboCop
         this warning can be disabled using `#rubocop:disable GitlabSecurity/SendFileParams`'.freeze
 
         def_node_search :params_node?, <<-PATTERN
-           (send (send nil :params) ... )
+           (send (send nil? :params) ... )
         PATTERN
 
         def on_send(node)
           return unless node.command?(:send_file)
-          return unless node.method_args.any? { |e| params_node?(e) }
+          return unless node.arguments.any? { |e| params_node?(e) }
 
-          add_offense(node, :selector)
+          add_offense(node, location: :selector)
         end
       end
     end

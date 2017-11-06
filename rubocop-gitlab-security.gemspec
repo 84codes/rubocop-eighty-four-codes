@@ -1,15 +1,13 @@
-# encoding: utf-8
-
 $LOAD_PATH.unshift File.expand_path('../lib', __FILE__)
 require 'rubocop/gitlab-security/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'rubocop-gitlab-security'
   spec.summary = 'Basic security checks for projects'
-  spec.description = <<-end_description
+  spec.description = <<~DESCRIPTION
     Basic security checking for Ruby files.
     A plugin for the RuboCop code style enforcing & linting tool.
-  end_description
+  DESCRIPTION
   spec.homepage = 'https://gitlab.com/gitlab-org/rubocop-gitlab-security/'
   spec.authors = ['Brian Neel']
   spec.email = [
@@ -19,7 +17,7 @@ Gem::Specification.new do |spec|
 
   spec.version = RuboCop::GitlabSecurity::Version::STRING
   spec.platform = Gem::Platform::RUBY
-  spec.required_ruby_version = '>= 2.1.0'
+  spec.required_ruby_version = '>= 2.3.0'
 
   spec.require_paths = ['lib']
   spec.files = Dir[
@@ -30,7 +28,7 @@ Gem::Specification.new do |spec|
   ]
   spec.extra_rdoc_files = ['MIT-LICENSE.md', 'README.md']
 
-  spec.add_runtime_dependency 'rubocop', '>= 0.47.1'
+  spec.add_runtime_dependency 'rubocop', '>= 0.51'
 
   spec.add_development_dependency 'rake'
 end

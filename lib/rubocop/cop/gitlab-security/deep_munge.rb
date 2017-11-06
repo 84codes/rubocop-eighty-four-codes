@@ -16,13 +16,13 @@ module RuboCop
         MSG = 'Never disable the deep munge security option.'.freeze
 
         def_node_matcher :disable_deep_munge?, <<-PATTERN
-          (send (send (send nil :config) :action_dispatch) :perform_deep_munge= (false))
+          (send (send (send nil? :config) :action_dispatch) :perform_deep_munge= (false))
         PATTERN
 
         def on_send(node)
           return unless disable_deep_munge?(node)
 
-          add_offense(node, :selector)
+          add_offense(node, location: :selector)
         end
       end
     end

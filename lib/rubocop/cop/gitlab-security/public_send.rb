@@ -31,7 +31,7 @@ module RuboCop
           send?(node) do |match|
             next unless node.arguments?
 
-            add_offense(node, :selector, format(MSG, match))
+            add_offense(node, location: :selector, message: format(MSG, match))
           end
         end
       end

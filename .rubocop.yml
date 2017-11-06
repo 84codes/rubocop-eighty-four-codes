@@ -23,5 +23,8 @@ Style/FileName:
     - 'lib/rubocop-gitlab-security.rb'
     - 'lib/rubocop/gitlab-security.rb'
 
+Style/FormatStringToken:
+  Enabled: false
+
 Style/FrozenStringLiteralComment:
   Enabled: false

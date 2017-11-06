@@ -25,9 +25,9 @@ module RuboCop
 
         def on_send(node)
           return unless node.command?(:system)
-          return unless node.method_args.any? { |e| system_var?(e) }
+          return unless node.arguments.any? { |e| system_var?(e) }
 
-          add_offense(node, :selector)
+          add_offense(node, location: :selector)
         end
       end
     end
