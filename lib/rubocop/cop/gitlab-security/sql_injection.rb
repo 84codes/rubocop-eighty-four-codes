@@ -28,9 +28,9 @@ module RuboCop
 
         def on_send(node)
           return unless where_user_input?(node)
-          return unless node.method_args.any? { |e| string_var_string?(e) }
+          return unless node.arguments.any? { |e| string_var_string?(e) }
 
-          add_offense(node, :selector)
+          add_offense(node, location: :selector)
         end
       end
     end

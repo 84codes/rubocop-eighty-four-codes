@@ -34,7 +34,7 @@ module RuboCop
         # Check for `to_json` sent to any object that's not a Hash literal or
         # Serializer instance
         def_node_matcher :json_serialization?, <<~PATTERN
-          (send !{nil hash #serializer?} ${:to_json :as_json} $...)
+          (send !{nil? hash #serializer?} ${:to_json :as_json} $...)
         PATTERN
 
         # Check if node is a `only: ...` pair
@@ -54,7 +54,7 @@ module RuboCop
 
         # Check for `SomeConstant.new`
         def_node_search :constant_init, <<~PATTERN
-          (send (const nil $_) :new ...)
+          (send (const nil? $_) :new ...)
         PATTERN
 
         def on_send(node)
@@ -66,7 +66,7 @@ module RuboCop
 
           if matched.last.nil? || matched.last.empty?
             # Empty `to_json` call
-            add_offense(node, :selector, format_message)
+            add_offense(node, location: :selector, message: format_message)
           else
             check_arguments(node, matched)
           end
@@ -98,7 +98,7 @@ module RuboCop
           # Add a top-level offense for the entire argument list, but only if
           # we haven't yet added any offenses to the child Hash values (such
           # as `include`)
-          add_offense(node.children.last, :expression, format_message)
+          add_offense(node.children.last, location: :expression, message: format_message)
         end
 
         def check_pair(pair)
@@ -110,7 +110,7 @@ module RuboCop
             includes.each_child_node do |child_node|
               next if contains_only?(child_node)
 
-              add_offense(child_node, :expression, format_message)
+              add_offense(child_node, location: :expression, message: format_message)
             end
           end
         end
