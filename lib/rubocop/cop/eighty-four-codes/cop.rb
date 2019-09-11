@@ -1,10 +1,10 @@
 module RuboCop
   module Cop # rubocop:disable Style/Documentation
-    WorkaroundCop2 = Cop.dup
+    WorkaroundCop84 = Cop.dup
 
     # Clone of the the normal RuboCop::Cop::Cop class so we can rewrite
     # the inherited method without breaking functionality
-    class WorkaroundCop2
+    class WorkaroundCop84
       # Overwrite the cop inherited method to be a noop. Our RSpec::Cop
       # class will invoke the inherited hook instead
       def self.inherited(*); end
@@ -15,7 +15,7 @@ module RuboCop
         other.equal?(RuboCop::Cop::Cop) || super
       end
     end
-    private_constant(:WorkaroundCop2)
+    private_constant(:WorkaroundCop84)
 
     module EightyFourCodes
       # @abstract parent class to rspec cops
@@ -32,7 +32,7 @@ module RuboCop
       #       Patterns:
       #       - '_test.rb$'
       #       - '(?:^|/)test/'
-      class Cop < WorkaroundCop2
+      class Cop < WorkaroundCop84
         include RuboCop::EightyFourCodes::Language
         include RuboCop::EightyFourCodes::Language::NodePattern
 
