@@ -1,9 +1,8 @@
 ---
-
 AllCops:
   GitlabSecurity:
     Patterns:
-    - '.+'
+      - ".+"
 
 GitlabSecurity/DeepMunge:
   Description: Checks for disabling the deep munge security control.
@@ -34,4 +33,8 @@ GitlabSecurity/SqlInjection:
 
 GitlabSecurity/SystemCommandInjection:
   Description: Check for Command Injection in System()
+  Enabled: true
+
+GitlabSecurity/CommandLiteralInjection:
+  Description: Check for Command Injection in `` and %x
   Enabled: true

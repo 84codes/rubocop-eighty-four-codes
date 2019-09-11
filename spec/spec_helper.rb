@@ -1,3 +1,4 @@
+require 'rspec'
 require 'rubocop'
 require 'rubocop/rspec/support'
 
