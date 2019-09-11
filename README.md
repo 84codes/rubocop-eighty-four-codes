@@ -4,21 +4,21 @@ code released under the MIT License.
 
 ## Installation
 
-Just install the `rubocop-eighty-four-codes` gem
+Just install the `rubocop-eightyfourcodes` gem
 
 ```bash
-gem install rubocop-eighty-four-codes
+gem install rubocop-eightyfourcodes
 ```
 
 or if you use bundler put this in your `Gemfile`
 
 ```yaml
-gem 'rubocop-eighty-four-codes'
+gem 'rubocop-eightyfourcodes'
 ```
 
 ## Usage
 
-You need to tell RuboCop to load the eighty-four-codes extension. There are three
+You need to tell RuboCop to load the eightyfourcodes extension. There are three
 ways to do this:
 
 ### RuboCop configuration file
@@ -26,29 +26,29 @@ ways to do this:
 Put this into your `.rubocop.yml`.
 
 ```yaml
-require: rubocop-eighty-four-codes
+require: rubocop-eightyfourcodes
 ```
 
-Now you can run `rubocop` and it will automatically load the RuboCop eighty-four-codes
+Now you can run `rubocop` and it will automatically load the RuboCop eightyfourcodes
 cops together with the standard cops.
 
 ### Command line
 
 ```bash
-rubocop --require rubocop-eighty-four-codes
+rubocop --require rubocop-eightyfourcodes
 ```
 
 ### Rake task
 
 ```ruby
 RuboCop::RakeTask.new do |task|
-  task.requires << 'rubocop-eighty-four-codes'
+  task.requires << 'rubocop-eightyfourcodes'
 end
 ```
 
 ## Inspecting specific files
 
-By default, `rubocop-eighty-four-codes` inspects all files. You can override this setting in your config file by specifying one or more patterns:
+By default, `rubocop-eightyfourcodes` inspects all files. You can override this setting in your config file by specifying one or more patterns:
 
 ```yaml
 # Inspect all files
@@ -69,10 +69,10 @@ AllCops:
 ## The Cops
 
 All cops are located under
-[`lib/rubocop/cop/eighty-four-codes`](lib/rubocop/cop/eighty-four-codes), and contain
+[`lib/rubocop/cop/eightyfourcodes`](lib/rubocop/cop/eightyfourcodes), and contain
 examples/documentation.
 
-In your `.rubocop.yml`, you may treat the eighty-four-codes cops just like any other
+In your `.rubocop.yml`, you may treat the eightyfourcodes cops just like any other
 cop. For example:
 
 ```yaml
@@ -91,5 +91,5 @@ EightyFourCodes/CommandLiteralInjection:
 
 ## License
 
-`rubocop-eighty-four-codes` is MIT licensed. [See the accompanying file](LICENSE.md) for
+`rubocop-eightyfourcodes` is MIT licensed. [See the accompanying file](LICENSE.md) for
 the full text.

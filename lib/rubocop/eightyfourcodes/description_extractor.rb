@@ -19,7 +19,7 @@ module RuboCop
 
       # Decorator of a YARD code object for working with documented rspec cops
       class CodeObject
-        RSPEC_NAMESPACE = 'RuboCop::Cop::eighty-four-codes'.freeze
+        RSPEC_NAMESPACE = 'RuboCop::Cop::eightyfourcodes'.freeze
 
         def initialize(yardoc)
           @yardoc = yardoc

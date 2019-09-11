@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubocop-eighty-four-codes (0.0.1)
+    rubocop-eightyfourcodes (0.0.1)
       rubocop (>= 0.51)
 
 GEM
@@ -52,7 +52,7 @@ DEPENDENCIES
   pry
   rake
   rspec (~> 3.6.0)
-  rubocop-eighty-four-codes!
+  rubocop-eightyfourcodes!
   rubocop-rspec (~> 1.21.0)
 
 BUNDLED WITH

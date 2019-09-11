@@ -4,7 +4,7 @@ module RuboCop
   module EightyFourCodes
     # Builds a YAML config file from two config hashes
     class ConfigFormatter
-      NAMESPACES = /^(#{Regexp.union('eighty-four-codes')})/
+      NAMESPACES = /^(#{Regexp.union('eightyfourcodes')})/
 
       def initialize(config, descriptions)
         @config       = config

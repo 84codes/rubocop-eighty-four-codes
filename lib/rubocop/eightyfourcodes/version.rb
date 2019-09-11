@@ -2,7 +2,7 @@
 
 module RuboCop
   module EightyFourCodes
-    # Version information for the eighty-four-codes Rubocop plugin.
+    # Version information for the eightyfourcodes Rubocop plugin.
     module Version
       STRING = '0.0.1'
     end
