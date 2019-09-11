@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 (2019-09-11)
+
+- `CommandLiteralInjection`: Passing user input to `` and %x without sanitization and parameterization can result in command injection)
+
 ## 0.1.0 (2017-08-24)
 
 - `PublicSend`: Check for `__send__` calls. (!5)
