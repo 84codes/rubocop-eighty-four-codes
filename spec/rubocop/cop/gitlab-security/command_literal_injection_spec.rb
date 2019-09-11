@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require_relative '../../../spec_helper'
-
 RSpec.describe RuboCop::Cop::GitlabSecurity::CommandLiteralInjection do
   subject(:cop) { described_class.new }
 
