@@ -1,4 +1,4 @@
-This is a collection of cops developed and used by eighty-four-codes AB
+This is a collection of cops developed and used by 84codes AB
 This code is based heavily upon the [rubocop-gitlab-security](https://gitlab.com/gitlab-org/rubocop-gitlab-security)
 code released under the MIT License.
 
@@ -53,7 +53,7 @@ By default, `rubocop-eighty-four-codes` inspects all files. You can override thi
 ```yaml
 # Inspect all files
 AllCops:
-  eighty-four-codes:
+  EightyFourCodes:
     Patterns:
     - '.+'
 ```
@@ -61,7 +61,7 @@ AllCops:
 ```yaml
 # Inspect only controller files.
 AllCops:
-  eighty-four-codes:
+  EightyFourCodes:
     Patterns:
     - app/controllers/**/*.rb
 ```
@@ -76,7 +76,7 @@ In your `.rubocop.yml`, you may treat the eighty-four-codes cops just like any o
 cop. For example:
 
 ```yaml
-EightyFourCodes/PublicSend:
+EightyFourCodes/CommandLiteralInjection:
   Exclude:
     - 'spec/**/*'
 ```
