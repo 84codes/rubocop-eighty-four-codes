@@ -1,6 +1,6 @@
 module RuboCop
   module Cop
-    module GitlabSecurity
+    module EightyFourCodes
       # Check for use of `/bin/ls #{params[:file]}` and %x(/bin/ls #{params[:file]})
       #
       # Passing user input to `` and %x without sanitization and parameterization can result in command injection

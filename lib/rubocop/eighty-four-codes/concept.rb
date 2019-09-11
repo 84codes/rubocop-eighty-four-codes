@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     # Wrapper for RSpec DSL methods
     class Concept
       include Language

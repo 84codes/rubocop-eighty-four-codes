@@ -1,5 +1,5 @@
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     # Because RuboCop doesn't yet support plugins, we have to monkey patch in a
     # bit of our configuration.
     module Inject

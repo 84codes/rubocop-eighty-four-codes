@@ -20,8 +20,8 @@ RSpec/FilePath:
 
 Style/FileName:
   Exclude:
-    - 'lib/rubocop-gitlab-security.rb'
-    - 'lib/rubocop/gitlab-security.rb'
+    - "lib/rubocop-eighty-four-codes.rb"
+    - "lib/rubocop/eighty-four-codes.rb"
 
 Style/FormatStringToken:
   Enabled: false

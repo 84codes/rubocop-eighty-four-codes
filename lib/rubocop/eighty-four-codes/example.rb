@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     # Wrapper for RSpec examples
     class Example < Concept
       def_node_matcher :extract_doc_string,     '(send _ _ $str ...)'

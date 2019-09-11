@@ -1,60 +1,59 @@
-This is an early attempt at creating Rubocop rules, similar to Rubocop-RSpec, for
-blocking dangerous code. This code is based heavily upon the [Rubocop-RSpec](https://github.com/backus/rubocop-rspec)
+This is a collection of cops developed and used by eighty-four-codes AB
+This code is based heavily upon the [rubocop-gitlab-security](https://gitlab.com/gitlab-org/rubocop-gitlab-security)
 code released under the MIT License.
 
 ## Installation
 
-Just install the `rubocop-gitlab-security` gem
+Just install the `rubocop-eighty-four-codes` gem
 
 ```bash
-gem install rubocop-gitlab-security
+gem install rubocop-eighty-four-codes
 ```
 
 or if you use bundler put this in your `Gemfile`
 
+```yaml
+gem 'rubocop-eighty-four-codes'
 ```
-gem 'rubocop-gitlab-security'
-```
-
 
 ## Usage
 
-You need to tell RuboCop to load the Gitlab-Security extension. There are three
+You need to tell RuboCop to load the eighty-four-codes extension. There are three
 ways to do this:
 
 ### RuboCop configuration file
 
 Put this into your `.rubocop.yml`.
 
-```
-require: rubocop-gitlab-security
+```yaml
+require: rubocop-eighty-four-codes
 ```
 
-Now you can run `rubocop` and it will automatically load the RuboCop Gitlab-Security
+Now you can run `rubocop` and it will automatically load the RuboCop eighty-four-codes
 cops together with the standard cops.
 
 ### Command line
 
 ```bash
-rubocop --require rubocop-gitlab-security
+rubocop --require rubocop-eighty-four-codes
 ```
 
 ### Rake task
 
 ```ruby
 RuboCop::RakeTask.new do |task|
-  task.requires << 'rubocop-gitlab-security'
+  task.requires << 'rubocop-eighty-four-codes'
 end
 ```
 
 ## Inspecting specific files
 
-By default, `rubocop-gitlab-security` inspects all files. You can override this setting in your config file by specifying one or more patterns:
+By default, `rubocop-eighty-four-codes` inspects all files. You can override this setting in your config file by specifying one or more patterns:
 
 ```yaml
 # Inspect all files
 AllCops:
-  GitlabSecurity:
+  eighty-four-codes:
     Patterns:
     - '.+'
 ```
@@ -62,7 +61,7 @@ AllCops:
 ```yaml
 # Inspect only controller files.
 AllCops:
-  GitlabSecurity:
+  eighty-four-codes:
     Patterns:
     - app/controllers/**/*.rb
 ```
@@ -70,14 +69,14 @@ AllCops:
 ## The Cops
 
 All cops are located under
-[`lib/rubocop/cop/gitlab-security`](lib/rubocop/cop/gitlab-security), and contain
+[`lib/rubocop/cop/eighty-four-codes`](lib/rubocop/cop/eighty-four-codes), and contain
 examples/documentation.
 
-In your `.rubocop.yml`, you may treat the Gitlab-Security cops just like any other
+In your `.rubocop.yml`, you may treat the eighty-four-codes cops just like any other
 cop. For example:
 
 ```yaml
-GitlabSecurity/PublicSend:
+EightyFourCodes/PublicSend:
   Exclude:
     - 'spec/**/*'
 ```
@@ -92,5 +91,5 @@ GitlabSecurity/PublicSend:
 
 ## License
 
-`rubocop-gitlab-security` is MIT licensed. [See the accompanying file](MIT-LICENSE.md) for
+`rubocop-eighty-four-codes` is MIT licensed. [See the accompanying file](LICENSE.md) for
 the full text.

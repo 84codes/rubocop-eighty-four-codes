@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::GitlabSecurity::CommandLiteralInjection do
+RSpec.describe RuboCop::Cop::EightyFourCodes::CommandLiteralInjection do
   subject(:cop) { described_class.new }
 
   describe '%x commands with interpolation' do

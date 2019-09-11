@@ -17,7 +17,7 @@ module RuboCop
     end
     private_constant(:WorkaroundCop2)
 
-    module GitlabSecurity
+    module EightyFourCodes
       # @abstract parent class to rspec cops
       #
       # The criteria for whether rubocop-rspec analyzes a certain ruby file
@@ -33,11 +33,11 @@ module RuboCop
       #       - '_test.rb$'
       #       - '(?:^|/)test/'
       class Cop < WorkaroundCop2
-        include RuboCop::GitlabSecurity::Language
-        include RuboCop::GitlabSecurity::Language::NodePattern
+        include RuboCop::EightyFourCodes::Language
+        include RuboCop::EightyFourCodes::Language::NodePattern
 
         DEFAULT_CONFIGURATION =
-          RuboCop::GitlabSecurity::CONFIG.fetch('AllCops').fetch('GitlabSecurity')
+          RuboCop::EightyFourCodes::CONFIG.fetch('AllCops').fetch('EightyFourCodes')
 
         # Invoke the original inherited hook so our cops are recognized
         def self.inherited(subclass)
@@ -61,7 +61,7 @@ module RuboCop
         def rspec_pattern_config
           config
             .for_all_cops
-            .fetch('GitlabSecurity', DEFAULT_CONFIGURATION)
+            .fetch('EightyFourCodes', DEFAULT_CONFIGURATION)
             .fetch('Patterns')
         end
       end

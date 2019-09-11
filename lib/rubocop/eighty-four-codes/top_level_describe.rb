@@ -1,5 +1,5 @@
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     # Helper methods for top level describe cops
     module TopLevelDescribe
       extend NodePattern::Macros

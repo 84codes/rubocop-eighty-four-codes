@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     module Language
       # Common node matchers used for matching against the rspec DSL
       module NodePattern

@@ -1,10 +1,10 @@
 require 'yaml'
 
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     # Builds a YAML config file from two config hashes
     class ConfigFormatter
-      NAMESPACES = /^(#{Regexp.union('GitlabSecurity')})/
+      NAMESPACES = /^(#{Regexp.union('eighty-four-codes')})/
 
       def initialize(config, descriptions)
         @config       = config

@@ -1,5 +1,5 @@
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     # Extracts cop descriptions from YARD docstrings
     class DescriptionExtractor
       def initialize(yardocs)
@@ -19,7 +19,7 @@ module RuboCop
 
       # Decorator of a YARD code object for working with documented rspec cops
       class CodeObject
-        RSPEC_NAMESPACE = 'RuboCop::Cop::GitlabSecurity'.freeze
+        RSPEC_NAMESPACE = 'RuboCop::Cop::eighty-four-codes'.freeze
 
         def initialize(yardoc)
           @yardoc = yardoc

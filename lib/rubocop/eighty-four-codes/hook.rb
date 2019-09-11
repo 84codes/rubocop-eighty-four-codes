@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     # Wrapper for RSpec hook
     class Hook < Concept
       STANDARDIZED_SCOPES = %i[each context suite].freeze

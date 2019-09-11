@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module RuboCop
-  module GitlabSecurity
+  module EightyFourCodes
     # Utility methods
     module Util
       # Error raised by `Util.one` if size is less than zero or greater than one
