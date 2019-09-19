@@ -5,5 +5,5 @@ AllCops:
       - ".+"
 
 EightyFourCodes/CommandLiteralInjection:
-  Description: Check for Command Injection in `` and %x
+  Description: "Check for Command Injection in `` and %x"
   Enabled: true
