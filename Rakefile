@@ -1,6 +1,27 @@
 require 'rake'
 require 'rubocop'
+require 'rubocop-eightyfourcodes'
 require 'rubocop/rake_task'
+
+module RuboCop
+  module Cop
+    class Generator
+      def bump_minor_version
+        versions = RuboCop::EightyFourCodes::Version::STRING.split('.')
+
+        "#{versions[0]}.#{versions[1].succ}.0"
+      end
+
+      class ConfigurationInjector
+        alias old_find_target_line find_target_line
+
+        def find_target_line
+          old_find_target_line + 1
+        end
+      end
+    end
+  end
+end
 
 desc 'Generate a new cop template'
 task :new_cop, [:cop] do |_task, args|

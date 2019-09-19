@@ -7,3 +7,4 @@ AllCops:
 EightyFourCodes/CommandLiteralInjection:
   Description: "Check for Command Injection in `` and %x"
   Enabled: true
+  VersionAdded: "0.0.1"
