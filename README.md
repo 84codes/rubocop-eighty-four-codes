@@ -69,7 +69,7 @@ AllCops:
 ## The Cops
 
 All cops are located under
-[`lib/rubocop/cop/eightyfourcodes`](lib/rubocop/cop/eightyfourcodes), and contain
+[`lib/rubocop/cop/eighty_four_codes`](lib/rubocop/cop/eighty_four_codes), and contain
 examples/documentation.
 
 In your `.rubocop.yml`, you may treat the eightyfourcodes cops just like any other
