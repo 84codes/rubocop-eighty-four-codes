@@ -28,6 +28,7 @@ module RuboCop
           PATTERN
 
           def on_send(node)
+            return unless File.basename(processed_source.file_path).eql?('Gemfile')
             static_version_found?(node) do |source_node, source|
               message = format(MSG, source: source)
 
