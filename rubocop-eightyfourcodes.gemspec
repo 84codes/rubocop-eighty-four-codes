@@ -1,5 +1,5 @@
 $LOAD_PATH.unshift File.expand_path('lib', __dir__)
-require 'rubocop/eightyfourcodes/version'
+require 'rubocop/eighty_four_codes/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'rubocop-eightyfourcodes'
