@@ -12,4 +12,4 @@ EightyFourCodes/CommandLiteralInjection:
 EightyFourCodes/RubyVersionFile:
   Description: "Ensure .ruby-version file use in Gemfile"
   Enabled: true
-  VersionAdded: "0.0.1"
+  VersionAdded: "0.0.2"
