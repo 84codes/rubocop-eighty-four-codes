@@ -1,15 +1,14 @@
----
-AllCops:
-  EightyFourCodes:
-    Patterns:
-      - ".+"
+# Write it!
 
 EightyFourCodes/CommandLiteralInjection:
-  Description: "Check for Command Injection in `` and %x"
+  Description: "Do not include variables command literals"
   Enabled: true
   VersionAdded: "0.0.1"
-
 EightyFourCodes/RubyVersionFile:
-  Description: "Ensure .ruby-version file use in Gemfile"
+  Description: "Control Ruby version via .ruby-version"
   Enabled: true
   VersionAdded: "0.0.2"
+EightyFourCodes/EnsureRedirect:
+  Description: "Checks for `redirect` from an `ensure` block"
+  Enabled: true
+  VersionAdded: "0.0.3"

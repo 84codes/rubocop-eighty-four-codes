@@ -1,30 +1,9 @@
 require:
   - rubocop-rspec
+  - rubocop-rake
 
-AllCops:
-  TargetRubyVersion: 2.3
-  DisplayCopNames: true
-  DisplayStyleGuide: false
-
-Metrics/BlockLength:
-  Enabled: false
-
-Metrics/LineLength:
-  Enabled: false
-
-RSpec/ExampleLength:
-  Enabled: false
-
-RSpec/FilePath:
-  Enabled: false
-
-Style/FileName:
+Naming/FileName:
   Exclude:
-    - "lib/rubocop-eightyfourcodes.rb"
-    - "lib/rubocop/eightyfourcodes.rb"
-
-Style/FormatStringToken:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
+    - lib/rubocop-eightyfourcodes.rb
+RSpec/ExampleLength:
+  Max: 10

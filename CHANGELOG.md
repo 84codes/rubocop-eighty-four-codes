@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.3 (2024-10-23)
+
+- Recreated entire project using <https://github.com/rubocop/rubocop-extension-generator>
+- Added `EnsureRedirect`
+
 ## 0.0.2 (2020-09-24)
 
 - Added `RubyVersionFile`: Ensure we read Gemfile ruby version from `.ruby-version` file

@@ -1,14 +1,18 @@
 # frozen_string_literal: true
 
-RSpec.describe RuboCop::Cop::EightyFourCodes::RubyVersionFile do
-  subject(:cop) { described_class.new(config) }
+require './spec/spec_helper'
 
+RSpec.describe RuboCop::Cop::EightyFourCodes::RubyVersionFile, :config do
   let(:config) { RuboCop::Config.new }
+  let(:cop_name) { 'EightyFourCodes/RubyVersionFile' }
+  let(:cop_message) do
+    "#{cop_name}: Control Ruby version via .ruby-version, fix by replacing with File.read('.ruby-version')"
+  end
 
   it 'registers an offense defined with double quotes' do
-    expect_offense(<<~'RUBY', 'Gemfile')
+    expect_offense(<<~RUBY, 'Gemfile')
       ruby "2.6.6"
-           ^^^^^^^ Control Ruby version via .ruby-version, fix by replacing with File.read('.ruby-version')
+           ^^^^^^^ #{cop_message}
     RUBY
 
     expect_correction(<<~RUBY)
@@ -17,9 +21,9 @@ RSpec.describe RuboCop::Cop::EightyFourCodes::RubyVersionFile do
   end
 
   it 'registers an offense defined with single quotes' do
-    expect_offense(<<~'RUBY', 'Gemfile')
+    expect_offense(<<~RUBY, 'Gemfile')
       ruby '2.1.0'
-           ^^^^^^^ Control Ruby version via .ruby-version, fix by replacing with File.read('.ruby-version')
+           ^^^^^^^ #{cop_message}
     RUBY
 
     expect_correction(<<~RUBY)
