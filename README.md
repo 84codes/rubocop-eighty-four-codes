@@ -1,20 +1,16 @@
+# Rubocop::EightyFourCodes
+
 This is a collection of cops developed and used by 84codes AB
-This code is based heavily upon the [rubocop-gitlab-security](https://gitlab.com/gitlab-org/rubocop-gitlab-security)
-code released under the MIT License.
 
 ## Installation
 
-Just install the `rubocop-eightyfourcodes` gem
+Install the gem and add to the application's Gemfile by executing:
 
-```bash
-gem install rubocop-eightyfourcodes
-```
+    bundle add rubocop-eightyfourcodes --require=false
 
-or if you use bundler put this in your `Gemfile`
+If bundler is not being used to manage dependencies, install the gem by executing:
 
-```yaml
-gem 'rubocop-eightyfourcodes'
-```
+    gem install rubocop-eightyfourcodes
 
 ## Usage
 
@@ -32,64 +28,20 @@ require: rubocop-eightyfourcodes
 Now you can run `rubocop` and it will automatically load the RuboCop eightyfourcodes
 cops together with the standard cops.
 
-### Command line
+## Development
 
-```bash
-rubocop --require rubocop-eightyfourcodes
-```
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
-### Rake task
+Use `bundle exec rake 'new_cop[EightyFourCodes/CommandLiteralInjection]'` to generate a new cop.
 
-```ruby
-RuboCop::RakeTask.new do |task|
-  task.requires << 'rubocop-eightyfourcodes'
-end
-```
+The [NodePattern Debugger](https://nodepattern.herokuapp.com/) is a very helpful resource when creating new AST matchers.
 
-## Inspecting specific files
-
-By default, `rubocop-eightyfourcodes` inspects all files. You can override this setting in your config file by specifying one or more patterns:
-
-```yaml
-# Inspect all files
-AllCops:
-  EightyFourCodes:
-    Patterns:
-    - '.+'
-```
-
-```yaml
-# Inspect only controller files.
-AllCops:
-  EightyFourCodes:
-    Patterns:
-    - app/controllers/**/*.rb
-```
-
-## The Cops
-
-All cops are located under
-[`lib/rubocop/cop/eighty_four_codes`](lib/rubocop/cop/eighty_four_codes), and contain
-examples/documentation.
-
-In your `.rubocop.yml`, you may treat the eightyfourcodes cops just like any other
-cop. For example:
-
-```yaml
-EightyFourCodes/CommandLiteralInjection:
-  Exclude:
-    - 'spec/**/*'
-```
+To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Merge Request
+Bug reports and pull requests are welcome on GitHub at <https://github.com/84codes/rubocop-eightyfourcodes>.
 
 ## License
 
-`rubocop-eightyfourcodes` is MIT licensed. [See the accompanying file](LICENSE.md) for
-the full text.
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).

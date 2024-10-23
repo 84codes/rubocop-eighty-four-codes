@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module RuboCop
   module Cop
     module EightyFourCodes
@@ -15,8 +17,8 @@ module RuboCop
       #   # even better
       #   exec("/bin/ls", shell_escape(filename))
       #
-      class CommandLiteralInjection < RuboCop::Cop::Cop
-        MSG = 'Do not include variables command literals. Use parameters "system(cmd, params)" or exec() instead'.freeze
+      class CommandLiteralInjection < Base
+        MSG = 'Do not include variables command literals. Use parameters "system(cmd, params)" or exec() instead'
 
         def_node_matcher :literal_var?, <<-PATTERN
           (begin ...)

@@ -1,50 +1,32 @@
-require 'rake'
-require 'rubocop'
-require 'rubocop-eightyfourcodes'
+# frozen_string_literal: true
+
+require 'bundler/gem_tasks'
+require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
 
-module RuboCop
-  module Cop
-    class Generator
-      def bump_minor_version
-        versions = RuboCop::EightyFourCodes::Version::STRING.split('.')
+RuboCop::RakeTask.new
 
-        "#{versions[0]}.#{versions[1].succ}.0"
-      end
+task default: %i[spec rubocop]
 
-      class ConfigurationInjector
-        alias old_find_target_line find_target_line
-
-        def find_target_line
-          old_find_target_line + 1
-        end
-      end
-    end
-  end
+RSpec::Core::RakeTask.new(:spec) do |spec|
+  spec.pattern = FileList['spec/**/*_spec.rb']
 end
 
-desc 'Generate a new cop template'
+desc 'Generate a new cop with a template'
 task :new_cop, [:cop] do |_task, args|
+  require 'rubocop'
+
   cop_name = args.fetch(:cop) do
-    warn 'usage: bundle exec rake new_cop[Name]'
+    warn 'usage: bundle exec rake new_cop[Department/Name]'
     exit!
   end
 
-  github_user = `git config github.user`.chop
-  github_user = 'your_id' if github_user.empty?
-
-  generator = RuboCop::Cop::Generator.new("EightyFourCodes/#{cop_name}", github_user)
+  generator = RuboCop::Cop::Generator.new(cop_name)
 
   generator.write_source
   generator.write_spec
-  # generator.inject_require
-  generator.inject_config
+  generator.inject_require(root_file_path: 'lib/rubocop/cop/eightyfourcodes_cops.rb')
+  generator.inject_config(config_file_path: 'config/default.yml')
 
   puts generator.todo
 end
-
-require 'rspec/core/rake_task'
-
-RSpec::Core::RakeTask.new(:spec)
-
-task default: :spec
