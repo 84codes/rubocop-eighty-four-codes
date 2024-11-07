@@ -1,5 +1,3 @@
-# Write it!
-
 EightyFourCodes/CommandLiteralInjection:
   Description: "Do not include variables command literals"
   Enabled: true
