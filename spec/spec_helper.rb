@@ -14,4 +14,10 @@ RSpec.configure do |config|
 
   config.order = :random
   Kernel.srand config.seed
+
+  config.define_derived_metadata(file_path: %r{/spec/rubocop/cop/}) do |meta|
+    meta[:type] = :cop_spec
+  end
+
+  config.include_context 'config', type: :cop_spec
 end
