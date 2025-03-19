@@ -2,6 +2,10 @@ require:
   - rubocop-rspec
   - rubocop-rake
 
+AllCops:
+  Exclude:
+    - 'lib/rubocop/cop/gitlab_security/*.rb'
+    - 'spec/rubocop/cop/gitlab_security/*.rb'
 Naming/FileName:
   Exclude:
     - lib/rubocop-eightyfourcodes.rb
