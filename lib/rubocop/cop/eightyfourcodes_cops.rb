@@ -3,3 +3,10 @@
 require_relative 'eighty_four_codes/command_literal_injection'
 require_relative 'eighty_four_codes/ensure_redirect'
 require_relative 'eighty_four_codes/ruby_version_file'
+
+require_relative 'gitlab_security/json_serialization'
+require_relative 'gitlab_security/public_send'
+require_relative 'gitlab_security/redirect_to_params_update'
+require_relative 'gitlab_security/send_file_params'
+require_relative 'gitlab_security/sql_injection'
+require_relative 'gitlab_security/system_command_injection'
