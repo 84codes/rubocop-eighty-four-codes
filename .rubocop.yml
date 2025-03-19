@@ -3,6 +3,7 @@ plugins:
   - rubocop-rake
 
 AllCops:
+  NewCops: enable
   Exclude:
     - 'lib/rubocop/cop/gitlab_security/*.rb'
     - 'spec/rubocop/cop/gitlab_security/*.rb'
