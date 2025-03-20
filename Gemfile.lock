@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubocop-eightyfourcodes (0.0.3)
+    rubocop-eightyfourcodes (0.0.4)
       rubocop (< 2)
 
 GEM
