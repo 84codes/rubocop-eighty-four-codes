@@ -1,5 +1,4 @@
-# Write it!
-
+---
 EightyFourCodes/CommandLiteralInjection:
   Description: "Do not include variables command literals"
   Enabled: true
@@ -12,3 +11,33 @@ EightyFourCodes/EnsureRedirect:
   Description: "Checks for `redirect` from an `ensure` block"
   Enabled: true
   VersionAdded: "0.0.3"
+GitlabSecurity/DeepMunge:
+  Description: "Checks for disabling the deep munge security control."
+  Enabled: true
+  VersionAdded: "0.0.4"
+GitlabSecurity/JsonSerialization:
+  Description: "Checks for `to_json` / `as_json` without allowing via `only`."
+  Enabled: true
+  VersionAdded: "0.0.4"
+GitlabSecurity/PublicSend:
+  Description: "Checks for the use of `public_send`, `send`, and `__send__` methods."
+  Enabled: true
+  VersionAdded: "0.0.4"
+GitlabSecurity/RedirectToParamsUpdate:
+  Description: "Check for use of redirect_to(params.update())"
+  Enabled: true
+  VersionAdded: "0.0.4"
+GitlabSecurity/SendFileParams:
+  Description: "Check for use of send_file(..., params[], ...)"
+  Enabled: true
+  VersionAdded: "0.0.4"
+GitlabSecurity/SqlInjection:
+  Description: |
+    Check for use of where("name = '#{params[:name]}'")"
+  Enabled: true
+  VersionAdded: "0.0.4"
+GitlabSecurity/SystemCommandInjection:
+  Description: |
+    Check for use of system("/bin/ls #{params[:file]}")
+  Enabled: true
+  VersionAdded: "0.0.4"
