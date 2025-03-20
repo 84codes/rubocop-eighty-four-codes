@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.4 (2025-03-20)
+
+- Imported `rubocop-gitlab-security` cops ([#12](https://github.com/84codes/rubocop-eighty-four-codes/pull/12))
+
 ## 0.0.3 (2024-10-23)
 
 - Recreated entire project using <https://github.com/rubocop/rubocop-extension-generator>
