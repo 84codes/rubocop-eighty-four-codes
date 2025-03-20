@@ -36,7 +36,26 @@ Use `bundle exec rake 'new_cop[EightyFourCodes/CommandLiteralInjection]'` to gen
 
 The [NodePattern Debugger](https://nodepattern.herokuapp.com/) is a very helpful resource when creating new AST matchers.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+## Releasing
+
+To install this gem onto your local machine, run `bundle exec rake install`.
+
+To release a new version, update the version number in `version.rb`, in a commit or pull request.
+
+Create and push a new git tag:
+
+```shell
+git tag -m "Version <VERSION>" v<VERSION>
+git push --tags
+```
+
+This will trigger GitHub Actions to build and push the gem to [RubyGems.org](https://rubygems.org/gems/rubocop-eightyfourcodes).
+
+If the release workflow fails, you can re-run it by deleting the tag and pushing it again.
+
+```shell
+git push --delete origin v<VERSION>
+```
 
 ## Contributing
 
