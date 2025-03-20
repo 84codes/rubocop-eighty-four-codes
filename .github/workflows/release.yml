@@ -22,4 +22,7 @@ jobs:
       # ensure gem can be built and installed, push to rubygems.org
       - run: gem build rubocop-eightyfourcodes
       - run: gem install *.gem
-      - run: gem push *.gem
+      - run: |
+          ruby -S gem exec sigstore-cli:0.2.1 sign *.gem --bundle attestation.sigstore.json
+      - run: |
+          gem push --attestation attestation.sigstore.json *.gem
