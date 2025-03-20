@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     rubocop-eightyfourcodes (0.0.3)
-      rubocop
+      rubocop (< 2)
 
 GEM
   remote: https://rubygems.org/
