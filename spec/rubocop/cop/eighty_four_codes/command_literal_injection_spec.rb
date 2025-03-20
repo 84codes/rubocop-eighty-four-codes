@@ -35,7 +35,7 @@ RSpec.describe RuboCop::Cop::EightyFourCodes::CommandLiteralInjection, :config d
     end
 
     it 'allows %x without arguments' do
-      expect_no_offenses(<<-'RUBY')
+      expect_no_offenses(<<-RUBY)
          %x(cat /var/log/syslog)
       RUBY
     end
@@ -75,7 +75,7 @@ RSpec.describe RuboCop::Cop::EightyFourCodes::CommandLiteralInjection, :config d
     end
 
     it 'allows %x without arguments' do
-      expect_no_offenses(<<-'RUBY')
+      expect_no_offenses(<<-RUBY)
         `cat /var/log/syslog`
       RUBY
     end
