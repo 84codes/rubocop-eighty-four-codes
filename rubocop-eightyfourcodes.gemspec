@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   end
 
   spec.require_paths = ['lib']
-  spec.add_dependency 'rubocop', '< 2'
+  spec.add_dependency 'rubocop', ['>= 1.69.0', '< 2']
   spec.extra_rdoc_files = ['LICENSE.md', 'README.md']
 end
