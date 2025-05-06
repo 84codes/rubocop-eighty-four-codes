@@ -37,7 +37,7 @@ module RuboCop
 
         def on_ensure(node)
           # `:send` nodes represent method calls, so we look for send nodes and then check if they are `redirect`
-          node.body&.each_node(:send) do |send_node|
+          node.branch&.each_node(:send) do |send_node|
             # Check if the method name being called is `redirect`
             add_offense(send_node) if send_node.method?(:redirect)
           end
