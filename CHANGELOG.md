@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.5 (2025-05-07)
+
+- Handled deprecation of `EnsureNode#body` ([#20](https://github.com/84codes/rubocop-eighty-four-codes/pull/20))
+
 ## 0.0.4 (2025-03-20)
 
 - Imported `rubocop-gitlab-security` cops ([#12](https://github.com/84codes/rubocop-eighty-four-codes/pull/12))
